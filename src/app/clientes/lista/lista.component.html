@@ -1,0 +1,27 @@
+<div class="container" centered>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+      <table class="table table-hover">
+
+        <thead>
+          <tr class="text-center">
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th ><em class="fa fa-cog"></em></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr app-dados [cliente]='cliente' *ngFor="let cliente of clientes | async"></tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+  <a class="btn btn-sm btn-primary btn-create" routerLink="/cadastrar">Novo Cadastro</a>
+  <button type="button" class="btn btn-sm btn-primary btn-danger" (click)='deleteClientes()'>Deletar Todos</button>
+
+</div>

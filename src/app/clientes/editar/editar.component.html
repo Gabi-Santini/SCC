@@ -1,0 +1,35 @@
+<div class="container" [hidden]="submitted" style="width: 300px;">
+	<form (ngSubmit)="onSubmit()">
+
+		<div class="form-group">
+			<label for="nome">Nome</label>
+			<input type="text" class="form-control" id="nome" required [(ngModel)]="cliente.nome" name="nome">
+		</div>
+
+		<div class="form-group">
+			<label for="endereco">Endereço</label> <input type="text"
+				class="form-control" id="endereco" required [(ngModel)]="cliente.endereco"
+				name="endereco">
+		</div>
+
+    <div class="form-group">
+			<label for="telefone">Telefone</label> <input type="text"
+				class="form-control" id="telefone" required [(ngModel)]="cliente.telefone"
+				name="telefone">
+		</div>
+
+    <div class="form-group">
+			<label for="email">Email</label> <input type="text"
+				class="form-control" id="email" required [(ngModel)]="cliente.email"
+				name="email">
+		</div>
+
+		<button type="submit" class="btn btn-success">Cadastrar</button>
+	</form>
+</div>
+
+<div class="container" [hidden]="!submitted" centered>
+	<h4>Cadastro editado com sucesso!</h4>
+	<button class="btn btn-success" (click)="novoCliente()">Novo Cadastro</button>
+	 <a class="btn btn-warning" routerLink="/consultar">Consultar</a>
+</div>
